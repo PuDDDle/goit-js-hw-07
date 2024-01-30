@@ -1,13 +1,7 @@
-const input = document.querySelector("input");
-const output = document.querySelector("span");
+const nameInput = document.getElementById("name-input");
+const nameOutput = document.getElementById("name-output");
 
-input.addEventListener("input", typeInputHandler);
-
-function typeInputHandler() {
-  const inputType = input.value.trim();
-  if (inputType === "") {
-    return (inputType = "Anonymous");
-  } else {
-    output.innerHTML = inputType;
-  }
-}
+nameInput.addEventListener("input", (event) => {
+  let inputText = event.target.value.trim();
+  nameOutput.textContent = inputText || "Anonymous";
+});
